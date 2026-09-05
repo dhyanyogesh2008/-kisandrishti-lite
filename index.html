@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KisanDrishti Lite</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="top-bar">
+    <div class="brand">
+      <span class="leaf-icon">🌿</span>
+      <span>KisanDrishti Lite</span>
+    </div>
+
+    <span class="tagline">AI-assisted crop health screening</span>
+  </header>
+
+  <main class="page-content">
+    <section class="hero">
+      <p class="eyebrow">TOMATO LEAF DISEASE DETECTION</p>
+      <h1>Check your crop’s health in seconds.</h1>
+      <p class="intro">
+        Upload a clear photo of a tomato leaf. Our AI will identify possible
+        disease or pest symptoms and suggest a safe first action.
+      </p>
+    </section>
+
+    <section class="scanner-card">
+      <h2>Upload a leaf photo</h2>
+      <p class="helper-text">Use one clear, well-lit photo of a single leaf.</p>
+
+      <label for="leaf-photo" class="upload-box">
+        <span class="upload-icon">📷</span>
+        <strong>Choose a photo</strong>
+        <span>JPG, JPEG, or PNG</span>
+      </label>
+
+      <input id="leaf-photo" type="file" accept="image/*" hidden>
+
+      <p id="selected-file">No photo selected yet.</p>
+<img id="leaf-preview" class="leaf-preview hidden" alt="Selected tomato leaf preview">
+<p id="model-status" class="model-status">Loading AI model…</p>
+      <button id="analyse-button" disabled>Analyse leaf</button>
+    </section>
+
+    <section id="result-card" class="result-card hidden">
+      <p class="eyebrow">SCREENING RESULT</p>
+      <h2 id="disease-name">Waiting for analysis</h2>
+      <p id="confidence-text"></p>
+      <p id="advice-text"></p>
+    </section>
+
+    <p class="disclaimer">
+      This prototype provides early screening only. Please consult a local
+      agriculture expert for treatment decisions.
+    </p>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+<script src="advice.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
